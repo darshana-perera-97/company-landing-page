@@ -1,0 +1,528 @@
+* {
+    font-family: "Poppins", sans-serif !important;
+    /* cursor: none; */
+}
+
+:root {
+    --section-heading-color: #a3a3a3;
+    /* Define your desired color here */
+}
+
+.primaryText {
+    color: var(--section-heading-color);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    /* Smooth scrolling behavior */
+}
+
+header {
+    padding-top: 35vh !important;
+    padding: 60px 0;
+    text-align: center;
+    height: 97vh;
+    position: relative;
+    overflow: hidden;
+    /* To ensure the video doesn't overflow */
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: rgba(0, 0, 0, 0.5); */
+    /* Overlay for opacity */
+    z-index: 1;
+}
+
+header video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    opacity: 0.25;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    /* Place video in the back layer */
+    filter: brightness(1.2);
+    /* Increase brightness to make the video lighter */
+}
+
+header .content {
+    position: relative;
+    z-index: 2;
+    /* Place content above video and overlay */
+}
+
+header h2 {
+    font-weight: 200;
+    color: #b1b1b1;
+    font-size: 50px;
+    padding-bottom: 0px !important;
+    margin-bottom: 0px;
+}
+
+header p {
+    font-weight: 300;
+    color: #b6b6b6;
+    font-size: 20px;
+    padding: 0px 10%;
+    padding-bottom: 0px !important;
+    margin-bottom: 0px;
+}
+
+footer {
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    padding-top: 15px !important;
+}
+
+.section-padding {
+    padding: 50px 0;
+}
+
+.team img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 10vh;
+    opacity: 0.5;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 10px !important;
+}
+
+h1 {
+    font-size: 120px;
+    background: linear-gradient(90deg,
+            #8a2be2,
+            #a020f0,
+            #ff1493,
+            #ff4500,
+            #ffa500,
+            #ffd700,
+            #adff2f,
+            #7fff00,
+            #32cd32,
+            #00ff7f,
+            #40e0d0,
+            #00ced1,
+            #1e90ff,
+            #0000ff,
+            #8a2be2,
+            #9400d3,
+            #9932cc,
+            #8b008b,
+            #ff00ff,
+            #ff1493);
+    background-size: 400% 400%;
+    /* Make the background larger than the element */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    animation: gradientAnimation 60s linear infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.cursor {
+    position: fixed;
+    background-color: rgb(255, 0, 0);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    pointer-events: none;
+    /* Ensure the circle doesn't interfere with mouse events */
+    z-index: 1000;
+    /* Ensure it stays above other content */
+    display: none;
+    /* Initially hide the circle */
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 25px;
+    margin-top: 5vh;
+    font-weight: 200;
+    text-decoration: none;
+    color: #5f5f5f;
+    text-align: center;
+    border-radius: 5px;
+    background: #fff;
+    border: 2px solid;
+    border-image: linear-gradient(90deg, #ff6b6b, #f06595, #cc5de8, #845ef7, #5c7cfa, #339af0, #22b8cf, #20c997, #51cf66, #94d82d, #fcc419, #ff922b);
+    border-image-slice: 1;
+    animation: border-animation 1s ease infinite;
+    transition: padding 0.5s ease;
+    /* Add transition for padding with 1s delay */
+}
+
+.cta-button2 {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 25px;
+    margin-top: 5vh;
+    font-weight: 200;
+    text-decoration: none;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 5px;
+    /* background: #fff; */
+    border: 2px solid;
+    border-image: linear-gradient(90deg, #ff6b6b, #f06595, #cc5de8, #845ef7, #5c7cfa, #339af0, #22b8cf, #20c997, #51cf66, #94d82d, #fcc419, #ff922b);
+    border-image-slice: 1;
+    animation: border-animation 1s ease infinite;
+    transition: padding 0.5s ease;
+    /* Add transition for padding with 1s delay */
+}
+
+.cta-button:hover {
+    /* padding: 20px 40px; */
+    text-decoration: none;
+    color: #5f5f5f;
+    /* Increase padding on hover */
+}
+
+@keyframes border-animation {
+    0% {
+        border-image-source: linear-gradient(90deg, #ff6b6b, #f06595, #cc5de8, #845ef7, #5c7cfa, #339af0, #22b8cf, #20c997, #51cf66, #94d82d, #fcc419, #ff922b);
+    }
+
+    50% {
+        border-image-source: linear-gradient(90deg, #ff922b, #fcc419, #94d82d, #51cf66, #20c997, #22b8cf, #339af0, #5c7cfa, #845ef7, #cc5de8, #f06595, #ff6b6b);
+    }
+
+    100% {
+        border-image-source: linear-gradient(90deg, #ff6b6b, #f06595, #cc5de8, #845ef7, #5c7cfa, #339af0, #22b8cf, #20c997, #51cf66, #94d82d, #fcc419, #ff922b);
+    }
+}
+
+.section-heading {
+    font-size: 60px;
+    padding-top: 15vh;
+    font-weight: 200;
+    padding-bottom: 5px;
+    color: var(--section-heading-color);
+    display: inline-block;
+    border-bottom: 4px solid;
+    animation: borderGradient 10s infinite;
+}
+
+@keyframes borderGradient {
+    0% {
+        border-bottom-color: rgb(219, 219, 219);
+    }
+
+    25% {
+        border-bottom-color: ash;
+    }
+
+    60% {
+        border-bottom-color: rgb(131, 131, 131);
+    }
+
+    90% {
+        border-bottom-color: ash;
+    }
+
+    100% {
+        border-bottom-color: rgb(218, 218, 218);
+    }
+}
+
+.para {
+    color: var(--section-heading-color);
+    opacity: 0.8;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 1.9;
+    padding-top: 20px;
+    padding-bottom: 0vh;
+}
+
+.ash-button,
+.ash-button:hover,
+.ash-button:focus,
+.ash-button::after,
+.ash-button:active {
+    color: var(--section-heading-color);
+    outline: none;
+    border: 1px solid var(--section-heading-color);
+    padding: 10px 30px;
+    background-color: #ffffff;
+}
+
+.custom-card {
+    border-radius: 1.5rem;
+    /* Adjust the border-radius value as per your preference */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Adjust the shadow values as per your preference */
+}
+
+.logoSet {
+    background-color: #b1b1b1;
+    /* black background */
+    width: 100%;
+    /* full width of the viewport */
+    overflow-x: auto;
+    /* enable horizontal scrolling */
+    white-space: nowrap;
+    /* prevent wrapping of content */
+    padding: 20px 0;
+    margin-top: 5vh;
+    margin-bottom: 10vh;
+    /* add padding for spacing */
+}
+
+.logos {
+    display: inline-block;
+    /* display logos inline */
+}
+
+.logos img {
+    width: 150px;
+    /* set width of each logo */
+    height: 50px;
+    /* set height of each logo */
+    margin-right: 200px;
+    /* space between logos */
+}
+
+
+@keyframes borderChange {
+    0% {
+        border-color: #f44336;
+    }
+
+    25% {
+        border-color: #2196f3;
+    }
+
+    50% {
+        border-color: #4caf50;
+    }
+
+    75% {
+        border-color: #ff9800;
+    }
+
+    100% {
+        border-color: #9c27b0;
+    }
+}
+
+/* Apply animation to custom-card class */
+.custom-card {
+    border-style: solid;
+    animation: borderChange 5s infinite;
+    /* border-radius: 200px; */
+    /* Change '5s' to '1s' for 1-second intervals */
+}
+
+.team-card {
+
+    border-radius: 50px;
+    /* Change '5s' to '1s' for 1-second intervals */
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.social-icon {
+    font-size: 24px;
+    /* Adjust size as needed */
+    margin: 0 8px;
+    /* Adjust spacing between icons */
+    color: #333;
+    /* Adjust icon color */
+}
+
+@keyframes formBorderAnimation {
+    0% {
+        border-color: #f44336;
+    }
+
+    25% {
+        border-color: #2196f3;
+    }
+
+    50% {
+        border-color: #4caf50;
+    }
+
+    75% {
+        border-color: #ff9800;
+    }
+
+    100% {
+        border-color: #9c27b0;
+    }
+}
+
+/* Apply animation to form element */
+.contact-us form {
+    border: 2px solid transparent;
+    /* Initial border style */
+    animation: formBorderAnimation 5s infinite;
+    /* Change '5s' to '1s' for 1-second intervals */
+}
+
+/* Adjust spacing for better form layout */
+.contact-us form {
+    max-width: 60vw;
+    /* Adjust form width as needed */
+    margin: 0 auto;
+    border-radius: 50px;
+    padding: 5vh 8vh;
+    /* Add padding for better visual appearance */
+}
+
+.form-control {
+    padding: 30px 40px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+
+.contact-us h2 {
+    font-size: 45px;
+    font-weight: 300;
+}
+
+.contact-us button {
+    font-size: 30px;
+    font-weight: 300;
+}
+
+/* Background video styling */
+.demo-section .bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    /* Ensure it's behind other content */
+}
+
+/* Container and content styling */
+.demo-section .content {
+    position: relative;
+    padding: 80px 0;
+    /* Adjust padding as needed */
+    text-align: center;
+    color: #fff;
+    /* Text color */
+}
+
+.demo-section h2 {
+    font-size: 3rem;
+    /* Example font size */
+    margin-bottom: 20px;
+}
+
+.demo-section p {
+    font-size: 1.5rem;
+    /* Example font size */
+    margin-bottom: 30px;
+}
+
+/* CTA button styling */
+.demo-section .cta-button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    background-color: #fff;
+    color: #333;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.demo-section .cta-button:hover {
+    background-color: #f0f0f0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .demo-section .content {
+        padding: 60px 0;
+        /* Adjust padding for smaller screens */
+    }
+
+    .demo-section h2 {
+        font-size: 2.5rem;
+        /* Example font size adjustment for smaller screens */
+    }
+
+    .demo-section p {
+        font-size: 1.3rem;
+        /* Example font size adjustment for smaller screens */
+    }
+}
+
+.floating-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    /* Ensure it's above other content */
+}
+
+.floating-button a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #252525;
+    /* Adjust as per your design */
+    color: #ffffff;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 24px;
+    transition: background-color 0.3s ease;
+}
+
+.floating-button a:hover {
+    background-color: #0056b3;
+    /* Adjust hover color */
+}
+
+@media (max-width: 576px) {
+    .floating-button {
+        bottom: 10px;
+        right: 10px;
+    }
+}
